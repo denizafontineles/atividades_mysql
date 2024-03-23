@@ -61,12 +61,19 @@ VALUES ("5A", 2021, "Artes", 4.75, 7);
 INSERT INTO tb_notas(serie, ano, materia, notas, id_estudante) 
 VALUES ("5B", 2021, "Educação Física", 8.00, 8);
 
-UPDATE tb_notas SET id_estudante = 4 WHERE id = 4;
-
 SELECT tb_estudantes.nome, tb_notas.*
 FROM tb_estudantes LEFT JOIN tb_notas
 ON tb_notas.id_estudante = tb_notas.id
 WHERE tb_notas.notas > 7.0
 ORDER BY nome, id ASC;
+
+SELECT tb_estudantes.nome, tb_notas.*
+FROM tb_estudantes LEFT JOIN tb_notas
+ON tb_notas.id_estudante = tb_notas.id
+WHERE tb_notas.notas < 7.0
+ORDER BY nome, id ASC;
+
+UPDATE tb_notas SET id_estudante = 4 WHERE id = 4;
+
 
 
